@@ -16,5 +16,22 @@ public class snakegame {
 		int p = dice.nextInt(high-low) + low;
 		System.out.println("Rolling the dice we get:"+p);
 		
+		int noPlay = 1;
+		int Ladder = 2;
+		int snakes = 0;
+		int Players = 0;
+		int Dices = dice.nextInt(high-low) + low;
+		double randomCheck = Math.floor(Math.random() * 10) % 3;
+		if (randomCheck == noPlay) {
+			System.out.println("Player is at Same Position");
+		}
+		else if (randomCheck == Ladder) {
+			Players = Players + Dices;
+			System.out.println("Player move ahead by the  number of position received in the Dices is:"+Players);
+		}
+		else {
+			Players = Players - Dices;
+			System.out.println("Player move behind by the  number of position received in the Dices is:"+Players);
+		}
 	}
 }
