@@ -47,5 +47,23 @@ public class snakegame {
 				System.out.println("Dice Value is:" +diceRoll +  "Player Position Value is:" +playerstartPosition);
 			}
 		}
+		
+		int m = 0;
+		int PlayerStartPosition = playerStartPosition ;
+		while (PlayerStartPosition < playerWinningPosition) {
+			int diceRoll = dice.nextInt(high-low) + low;
+			m = m + 1;
+			PlayerStartPosition = PlayerStartPosition + diceRoll;
+			if (PlayerStartPosition < 100) {
+				System.out.println("Dice Value is:" +diceRoll +  "Player Position Value is:" +PlayerStartPosition);
+			}
+			else if (PlayerStartPosition > 100) {
+				PlayerStartPosition = PlayerStartPosition - diceRoll;
+				System.out.println("Dice Value is:" +diceRoll +  "Player Will be in the Same Position is:" +PlayerStartPosition);
+			}
+			else if (PlayerStartPosition == 100) {
+				System.out.println("Dice Value is:" +diceRoll +  "Player As Reached the Winning Position is:" +PlayerStartPosition);
+			}
+		}
 	}
 }
