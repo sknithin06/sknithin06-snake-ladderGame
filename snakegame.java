@@ -66,5 +66,36 @@ public class snakegame {
 			}
 		}
 		System.out.println("Number of Times the Dice is Rolled:" +m);
+		
+		int Player1 = playerStartPosition ;
+		int Player2 = playerStartPosition ;
+		int countPlayer = 0;
+		while (Player1 < playerWinningPosition && Player2 < playerWinningPosition ) {
+			int dicePlayer1 = dice.nextInt(high-low) + low;
+			int dicePlayer2 = dice.nextInt(high-low) + low;
+			countPlayer = countPlayer + 1;
+			Player1 = Player1 + dicePlayer1;
+			Player2 = Player2 + dicePlayer2;
+			if (Player1 < 100 && Player2 < 100) {
+				System.out.println("Dice Value of the Player1:" +dicePlayer1 +  "Position of the Player1 is:" +Player1);
+				System.out.println("Dice Value of the Player2:" +dicePlayer2 +  "Position of the Player2 is:" +Player2);
+			}
+			else if (Player1 > 100) {
+				Player1 = Player1 - dicePlayer1;
+				System.out.println("Dice Value of the Player1 is:" +dicePlayer1 +  "Player1 Will be in the Same Position is:" +Player1);
+			}
+			else if (Player2 > 100) {
+				Player2 = Player2 - dicePlayer2;
+				System.out.println("Dice Value of the Player2 is:" +dicePlayer2 +  "Player1 Will be in the Same Position is:" +Player2);
+			}	
+			else if (Player1 == 100 || Player2 == 100) {
+				if (Player1 == 100) {
+				System.out.println("Dice Value of the Player1 is:" +dicePlayer1 +  "Player1 is Winner  is:" +Player1);
+				}
+				else {
+				System.out.println("Dice Value of the Player2 is:" +dicePlayer2 +  "Player2 is  Winner is:" +Player2);
+				}
+			}
+		}
 	}
 }
