@@ -65,5 +65,6 @@ public class snakegame {
 				System.out.println("Dice Value is:" +diceRoll +  "Player As Reached the Winning Position is:" +PlayerStartPosition);
 			}
 		}
+		System.out.println("Number of Times the Dice is Rolled:" +m);
 	}
 }
