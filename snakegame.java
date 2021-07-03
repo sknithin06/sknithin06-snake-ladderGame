@@ -2,6 +2,7 @@ package Java;
 import java.util.Random;
 import java.util.Scanner;
 public class snakegame {
+	public static final int playerWinningPosition = 100;
 	public static void main(String[] args) { 
 		System.out.println("Welcome to Snake & Ladder Game");
 		
@@ -32,6 +33,19 @@ public class snakegame {
 		else {
 			Players = Players - Dices;
 			System.out.println("Player move behind by the  number of position received in the Dices is:"+Players);
+		}
+		
+		int playerstartPosition = playerStartPosition ;
+		while (playerstartPosition < playerWinningPosition) {
+			int diceRoll = dice.nextInt(high-low) + low;
+			playerstartPosition = playerstartPosition + diceRoll;
+			if (playerstartPosition < 0) {
+				playerstartPosition = 0;
+				System.out.println( "Dice Value is:" +diceRoll +  "Player Position Value is:" +playerstartPosition);
+			}
+			else {
+				System.out.println("Dice Value is:" +diceRoll +  "Player Position Value is:" +playerstartPosition);
+			}
 		}
 	}
 }
